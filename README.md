@@ -73,15 +73,18 @@ Follow these steps to set up the project environment.
     cd android_world
     python run_wifi_test.py
     ```
+![Execurion image](image.png)
 
 ## 5. File Structure
+The project is organized with the custom agent logic at the root level, alongside the cloned framework repositories.
 
-The custom logic for this project is contained in the following files:
-
-* **`run_wifi_test.py`**: The main script that initializes the environment and all agents, and orchestrates the test from start to finish.
-* **`qa_agent.py`**: Contains the `QAAgent` class, which extends the `AgentS2` framework to integrate the `VerifierAgent`, creating the core Plan -> Execute -> Verify loop.
-* **`verifier_agent.py`**: Contains the `VerifierAgent`, which uses an LLM to check if each action was successful.
-* **`supervisor_agent.py`**: Contains the `SupervisorAgent`, which analyzes the complete test run and generates a final report.
+* **`/`** (Project Root)
+    * **`/Agent-S/`**: The cloned Agent-S framework.
+    * **`/android_world/`**: The cloned android_world framework.
+    * **`run_wifi_test.py`**: The main script that initializes the environment and all agents, and orchestrates the test.
+    * **`qa_agent.py`**: Contains the `QAAgent` class, which extends `AgentS2` to integrate the `VerifierAgent`.
+    * **`verifier_agent.py`**: Contains the `VerifierAgent`, which uses an LLM to check if each action was successful.
+    * **`supervisor_agent.py`**: Contains the `SupervisorAgent`, which analyzes the complete test run.
 
 ## 6. Development Challenges and Solutions
 
